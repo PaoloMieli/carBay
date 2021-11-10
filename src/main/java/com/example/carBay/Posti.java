@@ -5,5 +5,5 @@ public enum Posti {
 	QUATTRO,
 	CINQUE,
 	SETTE;
-	//CIAO A TUTTI
+	
 }
