@@ -1,29 +1,62 @@
 package com.example.carBay;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Veicolo {
+@Entity
+@Table(name = "veicolo")
+//public class Veicolo {
+abstract class Veicolo {
 	
-
+	@Id
+	@Column(name = "veicolo_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "marca", nullable = false, length = 20)
 	private String marca;
+	@Column(name = "modello", nullable = false, length = 20)
 	private String modello;
+	
+	@Column(nullable = false, length = 45)
 	private String dataImmatricolazione;
+	
+	@Column(nullable = false, length = 20)
 	private String colore;
+	@Column(nullable = false, length = 20)
 	private String posti;
-	private String marce; 
+	@Column(nullable = false, length = 20)
+	private String marce;
+	@Column(nullable = false, length = 20)
 	private String cilindrata;
+	@Column(nullable = false, length = 20)
 	private String km; 
-	private String descrizione;
+	
+	@Column(nullable = false)
 	private Alimentazione alimentazione;
+	@Column(nullable = false)
 	private Trazione trazione;
+	@Column(nullable = false)
 	private Cambio cambio; 
+	
+	@Column(nullable = false, length = 10)
+	private String porte;
+	@Column(nullable = false, length = 20)
+	private Carrozzeria carrozzeria;
 
 	
 	
-	public Veicolo (String marca, String modello, String dataImmatricolazione,
+	public Veicolo (Long id,
+					String marca, String modello, String dataImmatricolazione,
 					String colore, String posti, String marce, String cilindrata,
-					String km, String descrizione, Alimentazione alimentazione,
-					Trazione trazione, Cambio cambio){
+					String km, Alimentazione alimentazione,
+					Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria){
 		
+		this.id = id;
 		this.marca = marca;
 		this.modello = modello;
 		this.dataImmatricolazione = dataImmatricolazione;
@@ -32,15 +65,20 @@ public class Veicolo {
 		this.marce = marce;
 		this.cilindrata = cilindrata;
 		this.km = km;
-		this.descrizione = descrizione;
+		
 		this.alimentazione = alimentazione;
 		this.trazione = trazione;
 		this.cambio = cambio;
+		
+		this.porte = porte;
+		this.carrozzeria = carrozzeria;
 	}
 	
 	
-	
-	
+	public Long getId() {
+		return id;
+	}
+	//----------------------
 	public String getMarca() {
 		return marca;
 	}
@@ -90,13 +128,6 @@ public class Veicolo {
 		this.cilindrata = cilindrata;
 	}
 	//----------------------
-	public String getDescrizione() {
-		return descrizione;
-	}
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-	//----------------------
 	public String getKm() {
 		return km;
 	}
@@ -115,5 +146,16 @@ public class Veicolo {
 	public Cambio getCambio() {
 		return cambio;
 	}
+	//----------------------
+	public String getPorte() {
+		return porte;
+	}
 
+	public void setPorte(String porte) {
+		this.porte = porte;
+	}
+	//----------------------
+	public Carrozzeria getCarrozzeria() {
+		return carrozzeria;
+	}
 }

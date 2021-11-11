@@ -8,7 +8,10 @@ public enum Carrozzeria {
 	COUPE("Carrozzeria Coupé"),
 	SW("Carrozzeria Station wagon"),
 	VAN("Carrozzeria Monovolume"),
-	SUV_FS("Carrozzeria Suv e Fuoristrada");
+	SUV_FS("Carrozzeria Suv e Fuoristrada"),
+	
+	FURGONEAPERTO("Furgone con cassone aperto"),
+	FURGONECHIUSO("Furgone con cassone chiuso");
 	
 	private String tipoCarrozzeria;
     

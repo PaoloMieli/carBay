@@ -16,14 +16,30 @@ public class Ruolo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
+	@Column(nullable = false, length = 45)
 	private String ruolo;
+	
+	
+	public Ruolo() {}
+	
+	public Ruolo(String ruolo) {
+		this.ruolo = ruolo;
+	}
+	
+	public Ruolo(Long id, String ruolo) {
+		this.id = id;
+		this.ruolo = ruolo;
+	}
+	
+	
 	
     public Long getId() {
         return id;
     }
 
-	public String getRuolo() {
-		return ruolo;
+    @Override
+	public String toString() {
+		return this.ruolo;
 	}
 
 }

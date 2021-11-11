@@ -20,14 +20,31 @@ public class Utente {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+
+    @Column(name = "nome", nullable = false, length = 20)
 	private String nome;
+	@Column(name = "cognome", nullable = false, length = 20)
 	private String cognome;
+	
+	@Column(nullable = false, unique = true, length = 45)
 	private String userName;
+	
+	@Column(nullable = false, length = 45)
 	private String dataNascita;
+	
+	@Column(nullable = false, unique = true, length = 45)
 	private String codiceFiscale;
+	
+	@Column(nullable = false, length = 64)
 	private String indirizzo;
+	
+	@Column(nullable = false, unique = true, length = 45)
 	private String email;
+	
+	@Column(nullable = false, length = 20)
 	private String telefono;
+	
+	@Column(nullable = false, length = 64)
 	private String password;
 	
 //	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
