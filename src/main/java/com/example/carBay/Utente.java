@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,7 +36,7 @@ public class Utente {
 	private String cognome;
 	
 	@Column(nullable = false, unique = true, length = 45)
-	private String userName;
+	private String username;
 	
 	@Column(nullable = false, length = 45)
 	private String dataNascita;
@@ -55,7 +56,7 @@ public class Utente {
 	@Column(nullable = false, length = 64)
 	private String password;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "utenti_ruoli",
             joinColumns = @JoinColumn(name = "utente_id"),
@@ -69,22 +70,22 @@ public class Utente {
 	private List<VenditaDiretta> annunci;
 	
 	
+//	public Utente() {}
 	
-	
-	public Utente(Long id, String nome, String cognome, String userName, String dataNascita,
-				String codiceFiscale, String indirizzo, String email,
-				String telefono, String password) {
-		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;
-		this.userName = userName;
-		this.dataNascita = dataNascita;
-		this.codiceFiscale = codiceFiscale;
-		this.indirizzo = indirizzo;
-		this.email = email;
-		this.telefono = telefono;
-		this.password = password;
-	}
+//	public Utente(Long id, String nome, String cognome, String userName, String dataNascita,
+//				String codiceFiscale, String indirizzo, String email,
+//				String telefono, String password) {
+//		this.id = id;
+//		this.nome = nome;
+//		this.cognome = cognome;
+//		this.userName = userName;
+//		this.dataNascita = dataNascita;
+//		this.codiceFiscale = codiceFiscale;
+//		this.indirizzo = indirizzo;
+//		this.email = email;
+//		this.telefono = telefono;
+//		this.password = password;
+//	}
 	
 	
 	public Long getId() {
@@ -105,11 +106,11 @@ public class Utente {
 		this.cognome = cognome;
 	}
 	//-----------------
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	//-----------------
 	public String getDataNascita() {

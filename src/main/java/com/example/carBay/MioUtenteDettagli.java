@@ -36,7 +36,7 @@ public class MioUtenteDettagli implements UserDetails{
  
     @Override
     public String getUsername() {
-        return utente.getUserName();
+        return utente.getUsername();
     }
  
     @Override

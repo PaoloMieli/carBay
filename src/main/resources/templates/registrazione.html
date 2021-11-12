@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+</head>
+<body>
+    <h1>Registrazione</h1>
+
+    <form action="#" autocomplete="off" th:action="@{/registrazione}"
+        th:object="${utente}" method="post">
+        <label for="nome"></label><br>
+        <input type="text" placeholder="Nome" id="nome" name="nome" th:field="*{nome}"><br>
+        <label for="cognome"></label><br>
+        <input type="text" placeholder="Cognome" id="cognome" name="cognome" th:field="*{cognome}"><br>
+        <label for="username"></label><br>
+        <input type="text" placeholder="Username" id="username" name="username" th:field="*{userName}"><br>
+        <label for="data"></label><br>
+        <input type="date" id="data" name="data" th:field="*{dataNascita}"><br>
+        <label for="cf"></label><br>
+        <input type="text" placeholder="Codice fiscale" id="cf" name="cf" th:field="*{codiceFiscale}"><br>
+        <label for="indirizzo"></label><br>
+        <input type="text" placeholder="Indirizzo" id="indirizzo" name="indirizzo" th:field="*{indirizzo}"><br>
+        <label for="email"></label><br>
+        <input type="email" placeholder="Email" id="email" name="email" th:field="*{email}"><br>
+        <label for="telefono"></label><br>
+        <input type="tel" placeholder="Telefono" id="telefono" name="telefono" th:field="*{telefono}"><br>
+        <label for="password"></label><br>
+        <input type="password" placeholder="Password" id="password" name="password" th:field="*{password}"><br>
+        <br><br><br>
+        <button type="submit">Registrati!</button>
+      </form>
+</body>
+</html>
