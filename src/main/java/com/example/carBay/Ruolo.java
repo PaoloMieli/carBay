@@ -20,6 +20,8 @@ public class Ruolo {
 	private String ruolo;
 	
 	
+	
+	
 	public Ruolo() {}
 	
 	public Ruolo(String ruolo) {

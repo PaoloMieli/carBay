@@ -1,15 +1,22 @@
 package com.example.carBay;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
+import javax.persistence.JoinTable;
+//import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "utenti")
@@ -47,13 +54,19 @@ public class Utente {
 	@Column(nullable = false, length = 64)
 	private String password;
 	
-//	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinTable(
-//            name = "utente_ruolo",
-//            joinColumns = @JoinColumn(name = "utente_id"),
-//            inverseJoinColumns = @JoinColumn(name = "ruolo_id")
-//            )
-//    private Set<Role> roles = new HashSet<>();
+	@ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "utenti_ruoli",
+            joinColumns = @JoinColumn(name = "utente_id"),
+            inverseJoinColumns = @JoinColumn(name = "ruolo_id")
+            )
+    private Set<Ruolo> ruoli = new HashSet<>();
+	
+	
+	
+	@OneToMany(mappedBy = "utente")
+	private List<VenditaDiretta> annunci;
+	
 	
 	
 	
