@@ -28,7 +28,8 @@ public class Utente {
 	private Long id;
 	
 
-    @Column(name = "nome", nullable = false, length = 20)
+  
+	@Column(name = "nome", nullable = false, length = 20)
 	private String nome;
 	@Column(name = "cognome", nullable = false, length = 20)
 	private String cognome;
@@ -153,4 +154,7 @@ public class Utente {
 		this.password = password;
 	}
 	//-----------------
+	public Set<Ruolo> getRuoli() {
+			return ruoli;
+		}
 }

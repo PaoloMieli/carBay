@@ -20,8 +20,7 @@ public class Ruolo {
 	private String ruolo;
 	
 	
-	
-	
+
 	public Ruolo() {}
 	
 	public Ruolo(String ruolo) {
@@ -42,6 +41,10 @@ public class Ruolo {
     @Override
 	public String toString() {
 		return this.ruolo;
+	}
+    
+    public String getRuolo() {
+		return ruolo;
 	}
 
 }
