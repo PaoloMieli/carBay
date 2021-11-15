@@ -9,12 +9,12 @@ import org.springframework.data.repository.query.Param;
 
 public interface UtenteRepository extends CrudRepository<Utente, Long> {
 	
-//	 @Query("SELECT u FROM User u WHERE u.username = :username")
-//	    public Utente getUtenteByUsername(@Param("username") String username);
-//	 
+	 @Query("SELECT u FROM Utente u WHERE u.username = :username")
+	    public Utente getUtenteByUsername(@Param("username") String username);
+	 
 	
 //	@Query("SELECT u FROM User u WHERE u.username = ?1")
 	
-	public Utente findByUsername(String username);  //alternativa
+//	public Utente findByUsername(String username);  //alternativa
 
 }

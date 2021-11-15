@@ -57,7 +57,7 @@ public class MioUtenteDettagli implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 	
 //	public String getFullName() {

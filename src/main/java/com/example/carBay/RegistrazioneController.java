@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller	
 //@RequestMapping(path="/index")
-public class MainController {
+public class RegistrazioneController {
 	
 	
 @Autowired // This means to get the bean called userRepository
@@ -59,12 +59,7 @@ public String mostraRegistrazione(Model model) {
    return "registrazione";
 }
 
-//@GetMapping("/confermaRegistrazione")
-//public String confermaRegistrazione(Model model) {
-//
-//   model.addAttribute("utente", new Utente()); 
-//   return "confermaRegistrazione";
-//}
+
 
 @PostMapping("/confermaRegistrazione")
 public String salvaUtente(@ModelAttribute Utente utente) {

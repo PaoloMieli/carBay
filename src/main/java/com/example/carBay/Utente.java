@@ -15,11 +15,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 //import javax.persistence.ManyToOne;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
 @Entity
+//@NamedQuery(name = "Utente.findByUsername",
+//query = "select u from Utente u where u.username = :username")
 @Table(name = "utenti")
 public class Utente {
 //	nome, cognome, data di nascita, codice fiscale, indirizzo, email, telefono, password

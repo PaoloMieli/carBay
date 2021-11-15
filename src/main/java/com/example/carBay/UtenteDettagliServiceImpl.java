@@ -15,7 +15,7 @@ public class UtenteDettagliServiceImpl implements UserDetailsService{
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
     	//Utente utente = utenteRepository.getUtenteByUsername(username);
-        Utente utente = utenteRepository.findByUsername(username);
+        Utente utente = utenteRepository.getUtenteByUsername(username);
          
         if (utente == null) {
             throw new UsernameNotFoundException("Utente non trovato");
