@@ -1,24 +1,27 @@
 package com.example.carBay;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Controller
 public class LoginController {
 	
+	@Autowired
 	private UtenteRepository utenteRepository;
 	
-	@GetMapping("/login")
+	@GetMapping("/login1")
 	public String mostraLogin() {
-
 	    return "login";
 	}
 	
 	@PostMapping("/confermaLogin")
 	public String loginUtente(@ModelAttribute Utente utente) {
-	    System.out.println("name="+utente.getNome()); //use a logger if you have one available
-	    utenteRepository.save(utente);
+	    //System.out.println("name="+utente.getUsername()); //use a logger if you have one available
+	    //utenteRepository.save(utente);
 	    return "confermaLogin";
 	}
 

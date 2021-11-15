@@ -59,32 +59,32 @@ public class VenditaDiretta implements Vendita{
 	private Utente utente;	
 	
 	
-	public VenditaDiretta (Long id,
-			String marca, String modello, String dataImmatricolazione,
-			String colore, String posti, String marce, String cilindrata,
-			String km, Alimentazione alimentazione,
-			Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria,
-			Double prezzo){
-
-this.id = id;
-this.marca = marca;
-this.modello = modello;
-this.dataImmatricolazione = dataImmatricolazione;
-this.colore = colore;
-this.posti = posti;
-this.marce = marce;
-this.cilindrata = cilindrata;
-this.km = km;
-
-this.alimentazione = alimentazione;
-this.trazione = trazione;
-this.cambio = cambio;
-
-this.porte = porte;
-this.carrozzeria = carrozzeria;
-
-this.prezzo = prezzo;
-}
+//	public VenditaDiretta (Long id,
+//			String marca, String modello, String dataImmatricolazione,
+//			String colore, String posti, String marce, String cilindrata,
+//			String km, Alimentazione alimentazione,
+//			Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria,
+//			Double prezzo){
+//
+//this.id = id;
+//this.marca = marca;
+//this.modello = modello;
+//this.dataImmatricolazione = dataImmatricolazione;
+//this.colore = colore;
+//this.posti = posti;
+//this.marce = marce;
+//this.cilindrata = cilindrata;
+//this.km = km;
+//
+//this.alimentazione = alimentazione;
+//this.trazione = trazione;
+//this.cambio = cambio;
+//
+//this.porte = porte;
+//this.carrozzeria = carrozzeria;
+//
+//this.prezzo = prezzo;
+//}
 
 	
 	
