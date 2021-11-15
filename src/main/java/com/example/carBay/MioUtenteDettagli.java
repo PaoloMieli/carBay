@@ -59,6 +59,10 @@ public class MioUtenteDettagli implements UserDetails{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+//	public String getFullName() {
+//        return user.getFirstName() + " " + user.getLastName();
+//    }
  
 //    @Override
 //    public boolean isEnabled() {
