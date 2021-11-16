@@ -1,9 +1,11 @@
-package com.example.carBay;
+package com.example.carBay.interfacce;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+
+import com.example.carBay.entita.Utente;
 
 //import com.example.carBay.Utente;
 

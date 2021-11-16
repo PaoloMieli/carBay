@@ -1,4 +1,4 @@
-package com.example.carBay;
+package com.example.carBay.entita;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.example.carBay.enumType.Alimentazione;
+import com.example.carBay.enumType.Cambio;
+import com.example.carBay.enumType.Carrozzeria;
+import com.example.carBay.enumType.Trazione;
+import com.example.carBay.interfacce.Vendita;
 
 @Entity
 @Table(name = "vendita")

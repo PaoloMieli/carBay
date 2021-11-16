@@ -9,6 +9,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.example.carBay.entita.Ruolo;
+import com.example.carBay.entita.Utente;
+
 public class MioUtenteDettagli implements UserDetails{
 
 	private Utente utente;

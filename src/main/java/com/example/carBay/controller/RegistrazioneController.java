@@ -1,4 +1,4 @@
-package com.example.carBay;
+package com.example.carBay.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.example.carBay.entita.Utente;
+import com.example.carBay.interfacce.UtenteRepository;
 
 
 @Controller	

@@ -1,4 +1,4 @@
-package com.example.carBay;
+package com.example.carBay.enumType;
 
 public enum Cambio {
 	

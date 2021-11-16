@@ -5,6 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.example.carBay.entita.Utente;
+import com.example.carBay.interfacce.UtenteRepository;
+
 public class UtenteDettagliServiceImpl implements UserDetailsService{
 
 	

@@ -1,4 +1,4 @@
-package com.example.carBay;
+package com.example.carBay.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.carBay.entita.VenditaDiretta;
+import com.example.carBay.interfacce.VenditaDirettaRepository;
 
 @Controller	
 public class VenditaDirettaController{

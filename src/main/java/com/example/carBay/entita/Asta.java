@@ -1,3 +1,4 @@
+package com.example.carBay.entita;
 //package com.example.carBay;
 //
 //import javax.persistence.Column;
