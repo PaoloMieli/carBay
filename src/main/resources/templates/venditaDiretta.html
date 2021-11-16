@@ -2,13 +2,175 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-   
     <title>Vendi</title>
+    
+
+    <script>
+        function popolaCampi(s1,s2){
+         var s1 = document.getElementById(s1);
+         var s2 = document.getElementById(s2);
+         s2.innerHTML = "";
+         if(s1.value == "alfaRomeo"){
+                    var optionArray = ['giulia|Giulia'];
+                }
+                else if(s1.value == "audi"){
+                    var optionArray = ['a8|A8'];
+                }
+                else if(s1.value == "bmw"){
+                    var optionArray = ['m4|M4'];
+                }
+                else if(s1.value == "ferrari"){
+                    var optionArray = ['sf90|Sf90', 'f8|F8'];
+                }
+                else if(s1.value == "fiat"){
+                    var optionArray = ['panda|Panda'];
+                }
+                else if(s1.value == "lotus"){
+                    var optionArray = ['exige|Exige'];
+                }
+                else if(s1.value == "mercedes"){
+                    var optionArray = ['gle|Gle'];
+                }
+                else if(s1.value == "nissan"){
+                    var optionArray = ['gtr|Gtr'];
+                }
+                else if(s1.value == "renault"){
+                    var optionArray = ['captur|Captur'];
+                }
+                else if(s1.value == "volvo"){
+                    var optionArray = ['v60|V60'];
+                }
+    
+         for(var option in optionArray){
+          var pair = optionArray[option].split("|");
+          var newOption = document.createElement("option");
+          newOption.value = pair[0];
+          newOption.innerHTML = pair[1];
+          s2.options.add(newOption);
+         }
+        }
+        </script>
+
+
+    
 </head>
 <body>
 
-    
+    <h1>Crea il tuo annuncio</h1>
 
+        <div class="container">
+
+       
+            <form action="#" th:action="@{/confermaCreazioneVenditaDiretta}" th:object="${venditaDiretta}" method="post">
+          
+                <div class="gruppo">
+                
+                        <label for="marca">Scegli una marca</label><br>
+                        <select id="slct1" name="slct1" th:field="*{marca}" onchange="popolaCampi(this.id, 'slct2')"><br>
+                        <option value="">Seleziona una marca</option>
+                        <option value="alfaRomeo">Alfa Romeo</option>
+                        <option value="audi">Audi</option>
+                        <option value="bmw">BMW</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="lotus">Lotus</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="nissan">Nissan</option>
+                        <option value="renault">Renault</option>
+                        <option value="volvo">Volvo</option>
+                        </select>
+                        <br>
+                </div>
+                
+                <div class="gruppo">
+                    <label for="">Scegli un modello</label><br>
+                    <select name="slct2" id="slct2" th:field="*{modello}"></select>
+                </div>
+
+            
+            <label for="prezzo"></label><br>
+            <input type="text" placeholder="prezzo" id="prezzo" name="prezzo" th:field="*{prezzo}"><br>
+          
+            <label for="dataImmatricolazione"></label><br>
+            <input type="text" placeholder="dataImmatricolazione" id="dataImmatricolazione" name="dataImmatricolazione" th:field="*{dataImmatricolazione}"><br>
+          
+            <label for="colore"></label><br>
+            <input type="text" placeholder="colore" id="colore" name="colore" th:field="*{colore}"><br>
+           
+            <label for="posti"></label><br>
+            <select id="posti" name="posti" th:field="*{posti}"><br>
+                <option value="">Seleziona numero posti</option>
+                <option value="1">2</option>
+                <option value="2">4</option>
+                <option value="3">5</option>
+                <option value="4">7</option>
+            </select><br>
+
+            <label for="marce"></label><br>
+            <select id="marce" name="marce" th:field="*{marce}"><br>
+                <option value="">Seleziona numero marce</option>
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="4">7</option>
+                <option value="5">8</option>
+                <option value="6">9</option>
+            </select><br>
+          
+            <label for="cilindrata"></label><br>
+            <input type="text" placeholder="cilindrata" id="cilindrata" name="cilindrata" th:field="*{cilindrata}"><br>
+           
+            <label for="km"></label><br>
+            <input type="text" placeholder="km" id="km" name="km" th:field="*{km}"><br>
+
+            <label for="alimentazione"></label><br>
+            <select id="alimentazione" name="alimentazione" th:field="*{alimentazione}"><br>
+                <option value="">Seleziona alimentazione veicolo</option>
+                <option value="benzina">Benzina</option>
+                <option value="gasolio">Gasolio</option>
+                <option value="ibrido">Ibrido</option>
+                <option value="gpl">GPL</option>
+                <option value="elettrico">Elettrico</option>
+            </select><br>
+
+            <label for="trazione"></label><br>
+            <select id="trazione" name="trazione" th:field="*{trazione}"><br>
+                <option value="">Seleziona trazione</option>
+                <option value="anteriore">Anteriore</option>
+                <option value="posteriore">Posteriore</option>
+                <option value="integrale">Integrale</option>
+            </select><br>
+
+           
+            <label for="cambio"></label><br>
+            <select id="cambio" name="cambio" th:field="*{cambio}"><br>
+                <option value="">Seleziona tipo di cambio</option>
+                <option value="manuale">Cambio manuale</option>
+                <option value="sequenziale">Cambio sequenziale</option>
+                <option value="automatico">Cambio automatico</option>
+            </select><br>
+
+            <label for="porte"></label><br>
+            <input type="text" placeholder="porte" id="porte" name="porte" th:field="*{porte}"><br>
+
+            <label for="carrozzeria"></label><br>
+            <select id="carrozzeria" name="carrozzeria" th:field="*{carrozzeria}"><br>
+                        <option value="">Seleziona un tipo di carrozzeria</option>
+                        <option value="city">City Car</option>
+                        <option value="berlina">Berlina</option>
+                        <option value="cabrio">Cabrio</option>
+                        <option value="coupe">Coupé</option>
+                        <option value="sw">Station Wagon</option>
+                        <option value="van">Van</option>
+                        <option value="suv_fs">SUV o Fuoristrada</option>
+                        <option value="furgoneaperto">Furgone con cassone aperto</option>
+                        <option value="furgonechiuso">Furgone con cassone chiuso</option>
+                    </select><br>
+        </div>
+        <br><br>
+        <button type="submit">Registrati!</button>
+    </form>
+    <br><br>
     <button onclick="window.location.href='http://localhost:8080/vendi';">Indietro</button>
 </body>
 </html>

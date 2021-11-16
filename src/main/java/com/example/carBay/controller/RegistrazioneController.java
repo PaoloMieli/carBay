@@ -1,6 +1,7 @@
 package com.example.carBay.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,6 +68,7 @@ public String mostraRegistrazione(Model model) {
 @PostMapping("/confermaRegistrazione")
 public String salvaUtente(@ModelAttribute Utente utente) {
     System.out.println("name="+utente.getNome()); //use a logger if you have one available
+    //utente.setPassword(BCryptPasswordEncoder.encode(utente.getPassword()));
     utenteRepository.save(utente);
     return "confermaRegistrazione";
 }
