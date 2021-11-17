@@ -161,4 +161,9 @@ public class Utente {
 	public Set<Ruolo> getRuoli() {
 			return ruoli;
 		}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 }

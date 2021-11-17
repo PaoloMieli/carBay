@@ -1,4 +1,4 @@
-package services;
+package com.example.carBay.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -62,6 +62,57 @@ public class MioUtenteDettagli implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	   public Long getId() {
+			return utente.getId();
+		}
+	   
+	   public String getNome() {
+			return utente.getNome();
+		}
+		
+		
+		//-----------------
+		public String getCognome() {
+			return utente.getCognome();
+		}
+		
+		//-----------------
+		
+		
+		//-----------------
+		public String getDataNascita() {
+			return utente.getDataNascita();
+		}
+		
+		//-----------------
+		public String getCodiceFiscale() {
+			return utente.getCodiceFiscale();
+		}
+		
+		//-----------------
+		public String getIndirizzo() {
+			return utente.getIndirizzo();
+		}
+		
+		//-----------------
+		public String getEmail() {
+			return utente.getEmail();
+		}
+		
+		//-----------------
+		public String getTelefono() {
+			return utente.getTelefono();
+		}
+		
+		
+	
+		
+		//-----------------
+		public Set<Ruolo> getRuoli() {
+				return utente.getRuoli();
+			}
+
 	
 //	public String getFullName() {
 //        return user.getFirstName() + " " + user.getLastName();

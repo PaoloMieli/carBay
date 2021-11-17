@@ -1,13 +1,15 @@
-package services;
+package com.example.carBay.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.example.carBay.model.Utente;
 import com.example.carBay.repository.UtenteRepository;
 
+@Service
 public class UtenteDettagliServiceImpl implements UserDetailsService{
 
 	
@@ -26,4 +28,6 @@ public class UtenteDettagliServiceImpl implements UserDetailsService{
          
         return new MioUtenteDettagli(utente);
     }
+    
+ 
 }

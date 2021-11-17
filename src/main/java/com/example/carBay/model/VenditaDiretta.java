@@ -51,25 +51,26 @@ public class VenditaDiretta {
 	@Column(nullable = true, length = 20)
 	private String km; 
 	
+	
 	@Column(nullable = true)
 	//@Enumerated(EnumType.STRING)
 	//private Alimentazione alimentazione;
 	private String alimentazione;
 	@Column(nullable = true)
-	@Enumerated(EnumType.STRING)
-	private Trazione trazione;
-//	private String trazione;
+//	@Enumerated(EnumType.STRING)
+//	private Trazione trazione;
+	private String trazione;
 	@Column(nullable = true)
-	@Enumerated(EnumType.STRING)
-	private Cambio cambio; 
-//	private String cambio;
+//	@Enumerated(EnumType.STRING)
+//	private Cambio cambio; 
+	private String cambio;
 	
 	@Column(nullable = true, length = 10)
 	private String porte;
 	@Column(nullable = true, length = 20)
-	@Enumerated(EnumType.STRING)
-	private Carrozzeria carrozzeria;
-//	private String carrozzeria;
+//	@Enumerated(EnumType.STRING)
+//	private Carrozzeria carrozzeria;
+	private String carrozzeria;
 	
 
 	@Lob
@@ -115,6 +116,15 @@ public class VenditaDiretta {
 //}
 
 	
+	
+	public Utente getUtente() {
+		return utente;
+	}
+	public void setUtente(Utente utente) {
+		this.utente = utente;
+	}
+	
+	//-------------------------
 	
 	public Long getId() {
 		return id;
@@ -176,17 +186,17 @@ public class VenditaDiretta {
 		this.km = km;
 		}
 		//----------------------
-		public Trazione getTrazione() {
-		return trazione;
-		}
+//		public Trazione getTrazione() {
+//		return trazione;
+//		}
 		//----------------------
 //		public Alimentazione getAlimentazione() {
 //		return alimentazione;
 //		}
 		//----------------------
-		public Cambio getCambio() {
-		return cambio;
-		}
+//		public Cambio getCambio() {
+//		return cambio;
+//		}
 		//----------------------
 		public String getPorte() {
 		return porte;
@@ -196,9 +206,9 @@ public class VenditaDiretta {
 		this.porte = porte;
 		}
 		//----------------------
-		public Carrozzeria getCarrozzeria() {
-		return carrozzeria;
-		}
+//		public Carrozzeria getCarrozzeria() {
+//		return carrozzeria;
+//		}
 		//--------------
 	public Double getPrezzo() {
 		return prezzo;
@@ -234,23 +244,23 @@ public class VenditaDiretta {
 	public void setAlimentazione(String alimentazione) {
 		this.alimentazione = alimentazione;
 	}
-//	public String getTrazione() {
-//		return trazione;
-//	}
-//	public void setTrazione(String trazione) {
-//		this.trazione = trazione;
-//	}
-//	public String getCambio() {
-//		return cambio;
-//	}
-//	public void setCambio(String cambio) {
-//		this.cambio = cambio;
-//	}
-//	public String getCarrozzeria() {
-//		return carrozzeria;
-//	}
-//	public void setCarrozzeria(String carrozzeria) {
-//		this.carrozzeria = carrozzeria;
-//	}
+	public String getTrazione() {
+		return trazione;
+	}
+	public void setTrazione(String trazione) {
+		this.trazione = trazione;
+	}
+	public String getCambio() {
+		return cambio;
+	}
+	public void setCambio(String cambio) {
+		this.cambio = cambio;
+	}
+	public String getCarrozzeria() {
+		return carrozzeria;
+	}
+	public void setCarrozzeria(String carrozzeria) {
+		this.carrozzeria = carrozzeria;
+	}
 	//------------------------
 }

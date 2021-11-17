@@ -3,27 +3,29 @@ package com.example.carBay.controller;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.view.RedirectView;
 
+import com.example.carBay.model.Utente;
 import com.example.carBay.model.VenditaDiretta;
 import com.example.carBay.repository.VenditaDirettaRepository;
-
-import services.FileUploadUtil;
+import com.example.carBay.services.MioUtenteDettagli;
+import com.example.carBay.services.UtenteDettagliServiceImpl;
 
 @Controller	
 public class VenditaDirettaController{
 	
 	@Autowired
 	private VenditaDirettaRepository venditaDirettaRepository;
+	@Autowired
+	private  UtenteDettagliServiceImpl  utenteDettagliServiceImpl;
 
 	@GetMapping("/venditaDiretta")
 	public String mostraFormVenditaDiretta(Model model) {
@@ -40,14 +42,20 @@ public class VenditaDirettaController{
 //	    return "index";
 //	}
 	
-	@PostMapping("/confermaCreazioneVenditaDiretta")
+	@PostMapping("/vendi")
 	public String salvaVenditaDiretta(
 			@ModelAttribute VenditaDiretta venditaDiretta, 
 			@RequestParam("pippo") MultipartFile multipartFile) throws IOException {
 	    //System.out.println("name="+utente.getNome()); //use a logger if you have one available
 	    venditaDiretta.setImmagine(multipartFile.getBytes());
-		venditaDirettaRepository.save(venditaDiretta);
-	    return "index";
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();        
+	    MioUtenteDettagli utente =(MioUtenteDettagli) utenteDettagliServiceImpl.loadUserByUsername(authentication.getName());
+	    Utente u= new Utente();
+//	    u.setUsername(utente.getUsername());
+	    u.setId(utente.getId());
+	    venditaDiretta.setUtente(u);
+		venditaDirettaRepository.save(venditaDiretta);//comprare riso al curry
+	    return "vendi";
 	}
 	
 	
