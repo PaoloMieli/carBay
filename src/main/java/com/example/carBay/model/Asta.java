@@ -1,4 +1,6 @@
-package com.example.carBay.entita;
+package com.example.carBay.model;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,22 +11,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.carBay.enumType.Alimentazione;
-import com.example.carBay.enumType.Cambio;
-import com.example.carBay.enumType.Carrozzeria;
-import com.example.carBay.enumType.Trazione;
-import com.example.carBay.interfacce.Vendita;
+import com.example.carBay.model.enumType.Alimentazione;
+import com.example.carBay.model.enumType.Cambio;
+import com.example.carBay.model.enumType.Carrozzeria;
+import com.example.carBay.model.enumType.Trazione;
+
 
 @Entity
-@Table(name = "vendita")
-public class VenditaDiretta implements Vendita{
+@Table(name = "asta")
+public class Asta{
 	@Id
-    @Column(name = "vendita_id")
+    @Column(name = "asta_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Column(nullable = false, length = 45)
-	private Double prezzo;
+	private Double prezzoBase;
+	@Column
+    private Date dataInizio;
+
 	
 	
 	@Column(name = "marca", nullable = false, length = 20)
@@ -64,34 +69,6 @@ public class VenditaDiretta implements Vendita{
 	@JoinColumn(name = "utente_id")
 	private Utente utente;	
 	
-	
-//	public VenditaDiretta (Long id,
-//			String marca, String modello, String dataImmatricolazione,
-//			String colore, String posti, String marce, String cilindrata,
-//			String km, Alimentazione alimentazione,
-//			Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria,
-//			Double prezzo){
-//
-//this.id = id;
-//this.marca = marca;
-//this.modello = modello;
-//this.dataImmatricolazione = dataImmatricolazione;
-//this.colore = colore;
-//this.posti = posti;
-//this.marce = marce;
-//this.cilindrata = cilindrata;
-//this.km = km;
-//
-//this.alimentazione = alimentazione;
-//this.trazione = trazione;
-//this.cambio = cambio;
-//
-//this.porte = porte;
-//this.carrozzeria = carrozzeria;
-//
-//this.prezzo = prezzo;
-//}
-
 	
 	
 	public Long getId() {
@@ -179,11 +156,11 @@ public class VenditaDiretta implements Vendita{
 		}
 		//--------------
 	public Double getPrezzo() {
-		return prezzo;
+		return prezzoBase;
 	}
 
-	public void setPrezzo(Double prezzo) {
-		this.prezzo = prezzo;
+	public void setPrezzo(Double prezzoBase) {
+		this.prezzoBase = prezzoBase;
 	}
 
 }

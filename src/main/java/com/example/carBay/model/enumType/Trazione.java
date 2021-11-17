@@ -1,4 +1,4 @@
-package com.example.carBay.enumType;
+package com.example.carBay.model.enumType;
 
 public enum Trazione {
 	ANTERIORE("trazione anteriore"),

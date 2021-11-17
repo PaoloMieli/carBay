@@ -1,4 +1,4 @@
-package com.example.carBay.entita;
+package com.example.carBay.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

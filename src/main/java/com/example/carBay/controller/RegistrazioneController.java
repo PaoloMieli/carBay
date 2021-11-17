@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.carBay.entita.Utente;
-import com.example.carBay.interfacce.UtenteRepository;
+import com.example.carBay.model.Utente;
+import com.example.carBay.repository.UtenteRepository;
 
 
 @Controller	

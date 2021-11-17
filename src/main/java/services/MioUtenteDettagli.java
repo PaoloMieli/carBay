@@ -1,4 +1,4 @@
-package com.example.carBay;
+package services;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,8 +9,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.carBay.entita.Ruolo;
-import com.example.carBay.entita.Utente;
+import com.example.carBay.model.Ruolo;
+import com.example.carBay.model.Utente;
 
 public class MioUtenteDettagli implements UserDetails{
 

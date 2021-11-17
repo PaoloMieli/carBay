@@ -1,4 +1,4 @@
-package com.example.carBay.interfacce;
+package com.example.carBay.repository;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.example.carBay.entita.Utente;
+import com.example.carBay.model.Utente;
 
 
 //import com.example.carBay.Utente;

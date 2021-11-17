@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.carBay.entita.Utente;
-import com.example.carBay.interfacce.AstaRepository;
+import com.example.carBay.model.Utente;
+import com.example.carBay.repository.AstaRepository;
 
 public class AstaController {
 

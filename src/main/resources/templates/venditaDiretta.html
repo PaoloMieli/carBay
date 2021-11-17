@@ -61,7 +61,8 @@
         <div class="container">
 
        
-            <form action="#" th:action="@{/confermaCreazioneVenditaDiretta}" th:object="${venditaDiretta}" method="post">
+            <form action="#" th:action="@{/confermaCreazioneVenditaDiretta}" th:object="${venditaDiretta}" method="post"
+                enctype="multipart/form-data">
           
                 <div class="gruppo">
                 
@@ -166,11 +167,15 @@
                         <option value="furgoneaperto">Furgone con cassone aperto</option>
                         <option value="furgonechiuso">Furgone con cassone chiuso</option>
                     </select><br>
+
+
+            <label for="immagine"></label><br>
+            <input type="file" name="immagine" accept="immagine/png, immagine/jpeg" />
         </div>
         <br><br>
         <button type="submit">Registrati!</button>
     </form>
     <br><br>
-    <button onclick="window.location.href='http://localhost:8080/vendi';">Indietro</button>
+    <button onclick="window.location.href='http://localhost:8080/';">Indietro</button>
 </body>
 </html>

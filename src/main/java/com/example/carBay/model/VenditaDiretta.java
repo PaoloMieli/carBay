@@ -1,6 +1,4 @@
-package com.example.carBay.entita;
-
-import java.util.Date;
+package com.example.carBay.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,28 +6,28 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.example.carBay.enumType.Alimentazione;
-import com.example.carBay.enumType.Cambio;
-import com.example.carBay.enumType.Carrozzeria;
-import com.example.carBay.enumType.Trazione;
-import com.example.carBay.interfacce.Vendita;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.carBay.model.enumType.Alimentazione;
+import com.example.carBay.model.enumType.Cambio;
+import com.example.carBay.model.enumType.Carrozzeria;
+import com.example.carBay.model.enumType.Trazione;
+
 
 @Entity
-@Table(name = "asta")
-public class Asta implements Vendita{
+@Table(name = "vendita")
+public class VenditaDiretta {
 	@Id
-    @Column(name = "asta_id")
+    @Column(name = "vendita_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@Column(nullable = false, length = 45)
-	private Double prezzoBase;
-	@Column
-    private Date dataInizio;
-
+	private Double prezzo;
 	
 	
 	@Column(name = "marca", nullable = false, length = 20)
@@ -63,12 +61,45 @@ public class Asta implements Vendita{
 	@Column(nullable = false, length = 20)
 	private Carrozzeria carrozzeria;
 	
+
+	@Lob
+	private byte[] immagine;
+	
+	//private MultipartFile multipartFile;
 	
 
 	@ManyToOne
 	@JoinColumn(name = "utente_id")
 	private Utente utente;	
 	
+	
+//	public VenditaDiretta (Long id,
+//			String marca, String modello, String dataImmatricolazione,
+//			String colore, String posti, String marce, String cilindrata,
+//			String km, Alimentazione alimentazione,
+//			Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria,
+//			Double prezzo){
+//
+//this.id = id;
+//this.marca = marca;
+//this.modello = modello;
+//this.dataImmatricolazione = dataImmatricolazione;
+//this.colore = colore;
+//this.posti = posti;
+//this.marce = marce;
+//this.cilindrata = cilindrata;
+//this.km = km;
+//
+//this.alimentazione = alimentazione;
+//this.trazione = trazione;
+//this.cambio = cambio;
+//
+//this.porte = porte;
+//this.carrozzeria = carrozzeria;
+//
+//this.prezzo = prezzo;
+//}
+
 	
 	
 	public Long getId() {
@@ -156,11 +187,25 @@ public class Asta implements Vendita{
 		}
 		//--------------
 	public Double getPrezzo() {
-		return prezzoBase;
+		return prezzo;
 	}
 
-	public void setPrezzo(Double prezzoBase) {
-		this.prezzoBase = prezzoBase;
+	public void setPrezzo(Double prezzo) {
+		this.prezzo = prezzo;
 	}
-
+	//------------
+	public byte[] getImmagine() {
+		return immagine;
+	}
+	public void setImmagine(byte[] immagine) {
+		this.immagine = immagine;
+	}
+	//------------
+//	public MultipartFile getMultipartFile() {
+//		return multipartFile;
+//	}
+//	public void setMultipartFile(MultipartFile multipartFile) {
+//		this.multipartFile = multipartFile;
+//	}
+	
 }

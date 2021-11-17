@@ -1,12 +1,12 @@
-package com.example.carBay;
+package services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.example.carBay.entita.Utente;
-import com.example.carBay.interfacce.UtenteRepository;
+import com.example.carBay.model.Utente;
+import com.example.carBay.repository.UtenteRepository;
 
 public class UtenteDettagliServiceImpl implements UserDetailsService{
 

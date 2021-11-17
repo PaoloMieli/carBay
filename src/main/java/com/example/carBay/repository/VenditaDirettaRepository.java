@@ -1,8 +1,8 @@
-package com.example.carBay.interfacce;
+package com.example.carBay.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.carBay.entita.VenditaDiretta;
+import com.example.carBay.model.VenditaDiretta;
 
 public interface VenditaDirettaRepository extends CrudRepository<VenditaDiretta, Long> {
 

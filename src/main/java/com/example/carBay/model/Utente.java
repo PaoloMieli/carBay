@@ -1,4 +1,4 @@
-package com.example.carBay.entita;
+package com.example.carBay.model;
 
 import java.util.HashSet;
 import java.util.List;
