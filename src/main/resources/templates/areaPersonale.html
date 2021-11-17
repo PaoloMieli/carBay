@@ -9,7 +9,7 @@
     
     <h1>Area Personale</h1>
         <div>
-            <form>
+            <form th:action="@{/areaPersonale}" method="post">
                 <label for="nome"></label><br>
                 <input type="text" placeholder="Nome" id="nome" name="nome"><br>
                 <label for="cognome"></label><br>
@@ -30,7 +30,7 @@
                 <input type="password" placeholder="Password" id="password" name="password"><br>
                 <br><br><br>
                 <button type="submit">Modifica</button>
-            </form>
+            </form >
         </div>
     
         

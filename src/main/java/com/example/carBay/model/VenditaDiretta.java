@@ -2,6 +2,8 @@ package com.example.carBay.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,44 +28,56 @@ public class VenditaDiretta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
-	@Column(nullable = false, length = 45)
+	@Column(nullable = true, length = 45)
 	private Double prezzo;
 	
 	
-	@Column(name = "marca", nullable = false, length = 20)
+	@Column(name = "marca", nullable = true, length = 20)
 	private String marca;
-	@Column(name = "modello", nullable = false, length = 20)
+	@Column(name = "modello", nullable = true, length = 20)
 	private String modello;
 	
-	@Column(nullable = false, length = 45)
+	@Column(nullable = true, length = 45)
 	private String dataImmatricolazione;
 	
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
 	private String colore;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
 	private String posti;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
 	private String marce;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
 	private String cilindrata;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
 	private String km; 
 	
-	@Column(nullable = false)
-	private Alimentazione alimentazione;
-	@Column(nullable = false)
+	@Column(nullable = true)
+	//@Enumerated(EnumType.STRING)
+	//private Alimentazione alimentazione;
+	private String alimentazione;
+	@Column(nullable = true)
+	@Enumerated(EnumType.STRING)
 	private Trazione trazione;
-	@Column(nullable = false)
+//	private String trazione;
+	@Column(nullable = true)
+	@Enumerated(EnumType.STRING)
 	private Cambio cambio; 
+//	private String cambio;
 	
-	@Column(nullable = false, length = 10)
+	@Column(nullable = true, length = 10)
 	private String porte;
-	@Column(nullable = false, length = 20)
+	@Column(nullable = true, length = 20)
+	@Enumerated(EnumType.STRING)
 	private Carrozzeria carrozzeria;
+//	private String carrozzeria;
 	
 
 	@Lob
+	//@Column(name = "immagine", columnDefinition="BLOB")
 	private byte[] immagine;
+	
+//	@Column(nullable = true, length = 64)
+//	private String immagini;
 	
 	//private MultipartFile multipartFile;
 	
@@ -166,9 +180,9 @@ public class VenditaDiretta {
 		return trazione;
 		}
 		//----------------------
-		public Alimentazione getAlimentazione() {
-		return alimentazione;
-		}
+//		public Alimentazione getAlimentazione() {
+//		return alimentazione;
+//		}
 		//----------------------
 		public Cambio getCambio() {
 		return cambio;
@@ -207,5 +221,36 @@ public class VenditaDiretta {
 //	public void setMultipartFile(MultipartFile multipartFile) {
 //		this.multipartFile = multipartFile;
 //	}
-	
+//	public String getImmagini() {
+//		return immagini;
+//	}
+//	public void setImmagini(String immagini) {
+//		this.immagini = immagini;
+//	}
+	//---------------------
+	public String getAlimentazione() {
+		return alimentazione;
+	}
+	public void setAlimentazione(String alimentazione) {
+		this.alimentazione = alimentazione;
+	}
+//	public String getTrazione() {
+//		return trazione;
+//	}
+//	public void setTrazione(String trazione) {
+//		this.trazione = trazione;
+//	}
+//	public String getCambio() {
+//		return cambio;
+//	}
+//	public void setCambio(String cambio) {
+//		this.cambio = cambio;
+//	}
+//	public String getCarrozzeria() {
+//		return carrozzeria;
+//	}
+//	public void setCarrozzeria(String carrozzeria) {
+//		this.carrozzeria = carrozzeria;
+//	}
+	//------------------------
 }

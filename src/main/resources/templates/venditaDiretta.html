@@ -61,7 +61,7 @@
         <div class="container">
 
        
-            <form action="#" th:action="@{/confermaCreazioneVenditaDiretta}" th:object="${venditaDiretta}" method="post"
+            <form th:action="@{/confermaCreazioneVenditaDiretta}" th:object="${venditaDiretta}" method="post"
                 enctype="multipart/form-data">
           
                 <div class="gruppo">
@@ -127,28 +127,34 @@
             <label for="alimentazione"></label><br>
             <select id="alimentazione" name="alimentazione" th:field="*{alimentazione}"><br>
                 <option value="">Seleziona alimentazione veicolo</option>
-                <option value="benzina">Benzina</option>
-                <option value="gasolio">Gasolio</option>
-                <option value="ibrido">Ibrido</option>
-                <option value="gpl">GPL</option>
-                <option value="elettrico">Elettrico</option>
+                <option value="BENZINA">Benzina</option>
+                <option value="GASOLIO">Gasolio</option>
+                <option value="IBRIDOELETTRICO">Ibrido</option>
+                <option value="GPL">GPL</option>
+                <option value="ELETTRICO">Elettrico</option>
             </select><br>
+
 
             <label for="trazione"></label><br>
             <select id="trazione" name="trazione" th:field="*{trazione}"><br>
                 <option value="">Seleziona trazione</option>
-                <option value="anteriore">Anteriore</option>
-                <option value="posteriore">Posteriore</option>
-                <option value="integrale">Integrale</option>
+                <option value="ANTERIORE">Anteriore</option>
+                <option value="POSTERIORE">Posteriore</option>
+                <option value="INTEGRALE">Integrale</option>
             </select><br>
 
-           
+	<!--
+			<select name="trazione">
+    		<option th:each="trazioneOpt : ${T(com.example.carbay.model.enumType.Trazione).values()}" 
+        			th:value="${colorOpt}" th:text="${colorOpt}"></option>
+			</select>
+      -->     
             <label for="cambio"></label><br>
             <select id="cambio" name="cambio" th:field="*{cambio}"><br>
                 <option value="">Seleziona tipo di cambio</option>
-                <option value="manuale">Cambio manuale</option>
-                <option value="sequenziale">Cambio sequenziale</option>
-                <option value="automatico">Cambio automatico</option>
+                <option value="MANUALE">Cambio manuale</option>
+                <option value="SEQUENZIALE">Cambio sequenziale</option>
+                <option value="AUTOMATICO">Cambio automatico</option>
             </select><br>
 
             <label for="porte"></label><br>
@@ -157,20 +163,20 @@
             <label for="carrozzeria"></label><br>
             <select id="carrozzeria" name="carrozzeria" th:field="*{carrozzeria}"><br>
                         <option value="">Seleziona un tipo di carrozzeria</option>
-                        <option value="city">City Car</option>
-                        <option value="berlina">Berlina</option>
-                        <option value="cabrio">Cabrio</option>
-                        <option value="coupe">Coupé</option>
-                        <option value="sw">Station Wagon</option>
-                        <option value="van">Van</option>
-                        <option value="suv_fs">SUV o Fuoristrada</option>
-                        <option value="furgoneaperto">Furgone con cassone aperto</option>
-                        <option value="furgonechiuso">Furgone con cassone chiuso</option>
+                        <option value="CITY">City Car</option>
+                        <option value="BERLINA">Berlina</option>
+                        <option value="CABRIO">Cabrio</option>
+                        <option value="COUPE">Coupé</option>
+                        <option value="SW">Station Wagon</option>
+                        <option value="VAN">Van</option>
+                        <option value="SUV_FS">SUV o Fuoristrada</option>
+                        <option value="FURGONEAPERTO">Furgone con cassone aperto</option>
+                        <option value="FURGONECHIUSO">Furgone con cassone chiuso</option>
                     </select><br>
 
 
-            <label for="immagine"></label><br>
-            <input type="file" name="immagine" accept="immagine/png, immagine/jpeg" />
+            <label for="pippo"></label><br>
+            <input type="file" name="pippo" />
         </div>
         <br><br>
         <button type="submit">Crea annuncio!</button>
