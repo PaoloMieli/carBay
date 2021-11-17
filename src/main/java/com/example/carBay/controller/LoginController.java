@@ -21,11 +21,11 @@ public class LoginController {
 	    return "login";
 	}
 	
-	@PostMapping("/confermaLogin")
-	public String loginUtente(@ModelAttribute Utente utente) {
-	    //System.out.println("name="+utente.getUsername()); //use a logger if you have one available
-	    //utenteRepository.save(utente);
-	    return "confermaLogin";
-	}
+//	@PostMapping("/confermaLogin")
+//	public String loginUtente(@ModelAttribute Utente utente) {
+//	    //System.out.println("name="+utente.getUsername()); //use a logger if you have one available
+//	    //utenteRepository.save(utente);
+//	    return "confermaLogin";
+//	}
 
 }

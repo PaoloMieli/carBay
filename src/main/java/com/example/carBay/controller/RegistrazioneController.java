@@ -68,7 +68,7 @@ public String mostraRegistrazione(Model model) {
 @PostMapping("/confermaRegistrazione")
 public String salvaUtente(@ModelAttribute Utente utente) {
     System.out.println("name="+utente.getNome()); //use a logger if you have one available
-    //utente.setPassword(BCryptPasswordEncoder.encode(utente.getPassword()));
+    utente.setPassword(new BCryptPasswordEncoder().encode(utente.getPassword()));
     utenteRepository.save(utente);
     return "confermaRegistrazione";
 }

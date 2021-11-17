@@ -50,9 +50,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 //            .antMatchers("/delete/**").hasAuthority("ADMIN")
             .anyRequest().permitAll()
             .and()
-            .formLogin().permitAll()
+            .formLogin().defaultSuccessUrl("/").permitAll()  //.loginPage("/login")
             .and()
-            .logout().permitAll()
+            .logout().logoutSuccessUrl("/").permitAll()
             .and()
             .exceptionHandling().accessDeniedPage("/403")
             ;

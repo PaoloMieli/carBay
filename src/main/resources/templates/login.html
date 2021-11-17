@@ -13,11 +13,11 @@
 
     <div>
         <h1>Login</h1>
-        <form>
+        <form th:action="@{/login}" method="post">
         <label for="username"></label><br>
-        <input type="text" placeholder="Username" id="username" name="username"><br>
+        <input type="text" placeholder="Username" id="username" name="username" required autofocus><br>
         <label for="password"></label><br>
-        <input type="password" placeholder="Password" id="password" name="password"><br><br><br>
+        <input type="password" placeholder="Password" id="password" name="password" required><br><br><br>
 
         <button type="submit">Accedi!</button>
         </form>
