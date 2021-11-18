@@ -23,5 +23,7 @@ public interface UtenteRepository extends CrudRepository<Utente, Long> {
 //	public Utente findByUsername(String username);  //alternativa
 	 
 	 //List<Vendita> findAllByBuyerId(Long id);
+	 
+	 
 
 }

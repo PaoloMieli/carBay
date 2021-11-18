@@ -50,7 +50,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 //            .antMatchers("/delete/**").hasAuthority("ADMIN")
             .anyRequest().permitAll()
             .and()
-            .formLogin().defaultSuccessUrl("/").permitAll()  //.loginPage("/login")
+            .formLogin().defaultSuccessUrl("/homepage").permitAll()  //.loginPage("/login")
             .and()
             .logout().logoutSuccessUrl("/").permitAll()
             .and()

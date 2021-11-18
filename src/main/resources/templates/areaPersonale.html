@@ -7,27 +7,29 @@
 </head>
 <body>
     
+    
+    
     <h1>Area Personale</h1>
         <div>
             <form th:action="@{/areaPersonale}" method="post">
                 <label for="nome"></label><br>
-                <input type="text" placeholder="Nome" id="nome" name="nome"><br>
+                <input type="text" id="nome" name="nome" th:value="${utente.nome}"><br>
                 <label for="cognome"></label><br>
-                <input type="text" placeholder="Cognome" id="cognome" name="cognome"><br>
+                <input type="text" id="cognome" name="cognome" th:value="${utente.cognome}"><br>
                 <label for="username"></label><br>
-                <input type="text" placeholder="Username" id="username" name="username"><br>
+                <input type="text" id="username" name="username" th:value="${utente.username}"><br>
                 <label for="data"></label><br>
-                <input type="date" id="data" name="data"><br>
+                <input type="date" id="data" name="data" ><br>
                 <label for="cf"></label><br>
-                <input type="text" placeholder="Codice fiscale" id="cf" name="cf"><br>
+                <input type="text" id="cf" name="cf" th:value="${utente.codiceFiscale}"><br>
                 <label for="indirizzo"></label><br>
-                <input type="text" placeholder="Indirizzo" id="indirizzo" name="indirizzo"><br>
+                <input type="text" id="indirizzo" name="indirizzo" th:value="${utente.indirizzo}"><br>
                 <label for="email"></label><br>
-                <input type="email" placeholder="Email" id="email" name="email"><br>
+                <input type="email" id="email" name="email" th:value="${utente.email}"><br>
                 <label for="telefono"></label><br>
-                <input type="tel" placeholder="Telefono" id="telefono" name="telefono"><br>
+                <input type="tel" id="telefono" name="telefono" th:value="${utente.telefono}"><br>
                 <label for="password"></label><br>
-                <input type="password" placeholder="Password" id="password" name="password"><br>
+                <input type="password" id="password" name="password" th:value="${utente.password}"><br>
                 <br><br><br>
                 <button type="submit">Modifica</button>
             </form >

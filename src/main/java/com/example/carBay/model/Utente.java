@@ -15,7 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 //import javax.persistence.ManyToOne;
 import javax.persistence.ManyToMany;
-import javax.persistence.NamedQuery;
+//import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;

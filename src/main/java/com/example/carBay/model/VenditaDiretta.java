@@ -2,8 +2,8 @@ package com.example.carBay.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+//import javax.persistence.EnumType;
+//import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,12 +12,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import com.example.carBay.model.enumType.Alimentazione;
-import com.example.carBay.model.enumType.Cambio;
-import com.example.carBay.model.enumType.Carrozzeria;
-import com.example.carBay.model.enumType.Trazione;
+//import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity

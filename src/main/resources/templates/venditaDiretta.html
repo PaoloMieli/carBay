@@ -124,6 +124,7 @@
             <label for="km"></label><br>
             <input type="text" placeholder="km" id="km" name="km" th:field="*{km}"><br>
 
+<!--
             <label for="alimentazione"></label><br>
             <select id="alimentazione" name="alimentazione" th:field="*{alimentazione}"><br>
                 <option value="">Seleziona alimentazione veicolo</option>
@@ -133,8 +134,16 @@
                 <option value="GPL">GPL</option>
                 <option value="ELETTRICO">Elettrico</option>
             </select><br>
+-->
 
 
+			<select id="alimentazione" name="alimentazione" th:field="*{alimentazione}"><br>
+				 
+				  <option th:each="alimentazione : ${alimentazioni}" th:value="${alimentazione.alimentazione}" 
+				  th:text="${alimentazione.alimentazione}"/>
+			</select><br>
+
+<!--
             <label for="trazione"></label><br>
             <select id="trazione" name="trazione" th:field="*{trazione}"><br>
                 <option value="">Seleziona trazione</option>
@@ -142,13 +151,14 @@
                 <option value="POSTERIORE">Posteriore</option>
                 <option value="INTEGRALE">Integrale</option>
             </select><br>
+ -->          
+            <select id="trazione" name="trazione" th:field="*{trazione}"><br>
+				
+				  <option th:each="trazione : ${trazioni}" th:value="${trazione.trazione}" 
+				  th:text="${trazione.trazione}"/>
+			</select><br>
 
-	<!--
-			<select name="trazione">
-    		<option th:each="trazioneOpt : ${T(com.example.carbay.model.enumType.Trazione).values()}" 
-        			th:value="${colorOpt}" th:text="${colorOpt}"></option>
-			</select>
-      -->     
+<!--	   
             <label for="cambio"></label><br>
             <select id="cambio" name="cambio" th:field="*{cambio}"><br>
                 <option value="">Seleziona tipo di cambio</option>
@@ -156,10 +166,20 @@
                 <option value="SEQUENZIALE">Cambio sequenziale</option>
                 <option value="AUTOMATICO">Cambio automatico</option>
             </select><br>
+-->         
+            
+             <select id="cambio" name="cambio" th:field="*{cambio}"><br>
+				 
+				  <option th:each="cambio : ${cambi}" th:value="${cambio.cambio}" 
+				  th:text="${cambio.cambio}"/>
+			</select><br>
+            
+            
 
             <label for="porte"></label><br>
             <input type="text" placeholder="porte" id="porte" name="porte" th:field="*{porte}"><br>
 
+<!--
             <label for="carrozzeria"></label><br>
             <select id="carrozzeria" name="carrozzeria" th:field="*{carrozzeria}"><br>
                         <option value="">Seleziona un tipo di carrozzeria</option>
@@ -173,13 +193,22 @@
                         <option value="FURGONEAPERTO">Furgone con cassone aperto</option>
                         <option value="FURGONECHIUSO">Furgone con cassone chiuso</option>
                     </select><br>
+-->
+
+
+			<select id="carrozzeria" name="carrozzeria" th:field="*{carrozzeria}"><br>
+				 
+				  <option th:each="carrozzeria : ${carrozzerie}" th:value="${carrozzeria.carrozzeria}" 
+				  th:text="${carrozzeria.carrozzeria}"/>
+			</select><br>
+
 
 
             <label for="pippo"></label><br>
             <input type="file" name="pippo" />
         </div>
         <br><br>
-        <button type="submit">Crea annuncio!</button>
+        <button type="submit">Crea annuncio</button>
     </form>
     <br><br>
     <button onclick="window.location.href='http://localhost:8080/';">Indietro</button>
