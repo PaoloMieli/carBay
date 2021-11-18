@@ -2,8 +2,7 @@ package com.example.carBay.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.EnumType;
-//import javax.persistence.Enumerated;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,8 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-//import org.springframework.web.multipart.MultipartFile;
 
 
 @Entity
@@ -48,67 +45,26 @@ public class VenditaDiretta {
 	
 	
 	@Column(nullable = true)
-	//@Enumerated(EnumType.STRING)
-	//private Alimentazione alimentazione;
 	private String alimentazione;
 	@Column(nullable = true)
-//	@Enumerated(EnumType.STRING)
-//	private Trazione trazione;
 	private String trazione;
 	@Column(nullable = true)
-//	@Enumerated(EnumType.STRING)
-//	private Cambio cambio; 
 	private String cambio;
 	
 	@Column(nullable = true, length = 10)
 	private String porte;
 	@Column(nullable = true, length = 20)
-//	@Enumerated(EnumType.STRING)
-//	private Carrozzeria carrozzeria;
 	private String carrozzeria;
 	
 
 	@Lob
-	//@Column(name = "immagine", columnDefinition="BLOB")
 	private byte[] immagine;
-	
-//	@Column(nullable = true, length = 64)
-//	private String immagini;
-	
-	//private MultipartFile multipartFile;
-	
+		
 
 	@ManyToOne
 	@JoinColumn(name = "utente_id")
 	private Utente utente;	
-	
-	
-//	public VenditaDiretta (Long id,
-//			String marca, String modello, String dataImmatricolazione,
-//			String colore, String posti, String marce, String cilindrata,
-//			String km, Alimentazione alimentazione,
-//			Trazione trazione, Cambio cambio, String porte, Carrozzeria carrozzeria,
-//			Double prezzo){
-//
-//this.id = id;
-//this.marca = marca;
-//this.modello = modello;
-//this.dataImmatricolazione = dataImmatricolazione;
-//this.colore = colore;
-//this.posti = posti;
-//this.marce = marce;
-//this.cilindrata = cilindrata;
-//this.km = km;
-//
-//this.alimentazione = alimentazione;
-//this.trazione = trazione;
-//this.cambio = cambio;
-//
-//this.porte = porte;
-//this.carrozzeria = carrozzeria;
-//
-//this.prezzo = prezzo;
-//}
+
 
 	
 	
@@ -181,18 +137,7 @@ public class VenditaDiretta {
 		this.km = km;
 		}
 		//----------------------
-//		public Trazione getTrazione() {
-//		return trazione;
-//		}
-		//----------------------
-//		public Alimentazione getAlimentazione() {
-//		return alimentazione;
-//		}
-		//----------------------
-//		public Cambio getCambio() {
-//		return cambio;
-//		}
-		//----------------------
+
 		public String getPorte() {
 		return porte;
 		}
@@ -201,10 +146,7 @@ public class VenditaDiretta {
 		this.porte = porte;
 		}
 		//----------------------
-//		public Carrozzeria getCarrozzeria() {
-//		return carrozzeria;
-//		}
-		//--------------
+
 	public Double getPrezzo() {
 		return prezzo;
 	}
@@ -219,19 +161,6 @@ public class VenditaDiretta {
 	public void setImmagine(byte[] immagine) {
 		this.immagine = immagine;
 	}
-	//------------
-//	public MultipartFile getMultipartFile() {
-//		return multipartFile;
-//	}
-//	public void setMultipartFile(MultipartFile multipartFile) {
-//		this.multipartFile = multipartFile;
-//	}
-//	public String getImmagini() {
-//		return immagini;
-//	}
-//	public void setImmagini(String immagini) {
-//		this.immagini = immagini;
-//	}
 	//---------------------
 	public String getAlimentazione() {
 		return alimentazione;

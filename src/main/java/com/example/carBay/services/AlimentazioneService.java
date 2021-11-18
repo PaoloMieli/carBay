@@ -20,14 +20,6 @@ public class AlimentazioneService {
 		return alimentazioneRepository.findAll();
 	}
 	
-	
-	
-//	public AlimentazioneRepository getAlimentazioneRepository() {
-//		return alimentazioneRepository;
-//	}
-//
-//	public void setAlimentazioneRepository(AlimentazioneRepository alimentazioneRepository) {
-//		this.alimentazioneRepository = alimentazioneRepository;
-//	}
+
 
 }

@@ -25,8 +25,7 @@ public class AstaController {
 
 	@PostMapping("/confermaRegistrazione")
 	public String salvaUtente(@ModelAttribute Utente utente) {
-	    System.out.println("name="+utente.getNome()); //use a logger if you have one available
-	    //astaRepository.save(utente);
+	    System.out.println("name="+utente.getNome());
 	    return "confermaRegistrazione";
 	}
 }

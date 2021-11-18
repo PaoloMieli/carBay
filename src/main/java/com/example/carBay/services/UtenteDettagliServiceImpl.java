@@ -19,7 +19,6 @@ public class UtenteDettagliServiceImpl implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-    	//Utente utente = utenteRepository.getUtenteByUsername(username);
         Utente utente = utenteRepository.getUtenteByUsername(username);
          
         if (utente == null) {

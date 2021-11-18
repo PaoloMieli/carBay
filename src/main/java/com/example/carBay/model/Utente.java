@@ -21,11 +21,9 @@ import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
 @Entity
-//@NamedQuery(name = "Utente.findByUsername",
-//query = "select u from Utente u where u.username = :username")
 @Table(name = "utenti")
 public class Utente {
-//	nome, cognome, data di nascita, codice fiscale, indirizzo, email, telefono, password
+
 	@Id
 	@Column(name = "utente_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -72,23 +70,6 @@ public class Utente {
 	@OneToMany(mappedBy = "utente")
 	private List<VenditaDiretta> annunci;
 	
-	
-//	public Utente() {}
-	
-//	public Utente(Long id, String nome, String cognome, String userName, String dataNascita,
-//				String codiceFiscale, String indirizzo, String email,
-//				String telefono, String password) {
-//		this.id = id;
-//		this.nome = nome;
-//		this.cognome = cognome;
-//		this.userName = userName;
-//		this.dataNascita = dataNascita;
-//		this.codiceFiscale = codiceFiscale;
-//		this.indirizzo = indirizzo;
-//		this.email = email;
-//		this.telefono = telefono;
-//		this.password = password;
-//	}
 	
 	
 	public Long getId() {

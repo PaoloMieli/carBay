@@ -112,17 +112,5 @@ public class MioUtenteDettagli implements UserDetails{
 		public Set<Ruolo> getRuoli() {
 				return utente.getRuoli();
 			}
-
-	
-//	public String getFullName() {
-//        return user.getFirstName() + " " + user.getLastName();
-//    }
- 
-//    @Override
-//    public boolean isEnabled() {
-//        return utente.isEnabled();
-//    }
-	
-	
 	
 }

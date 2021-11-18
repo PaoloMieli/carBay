@@ -11,30 +11,33 @@
     
     <h1>Area Personale</h1>
         <div>
-            <form th:action="@{/areaPersonale}" method="post">
+            <form th:action="@{/areaPersonale}" th:object="${utente}" method="post">
+                <input type="hidden" th:field="*{id}" id="id" name="id" th:value="${utente.id}"><br>
                 <label for="nome"></label><br>
-                <input type="text" id="nome" name="nome" th:value="${utente.nome}"><br>
+                <input type="text" th:field="*{nome}" id="nome" name="nome" th:value="${utente.nome}"><br>
                 <label for="cognome"></label><br>
-                <input type="text" id="cognome" name="cognome" th:value="${utente.cognome}"><br>
+                <input type="text" th:field="*{cognome}" id="cognome" name="cognome" th:value="${utente.cognome}"><br>
                 <label for="username"></label><br>
-                <input type="text" id="username" name="username" th:value="${utente.username}"><br>
+                <input type="text" th:field="*{username}" id="username" name="username" th:value="${utente.username}"><br>
                 <label for="data"></label><br>
-                <input type="date" id="data" name="data" ><br>
+                <input type="date" th:field="*{dataNascita}" id="data" name="data" th:value="${utente.dataNascita}"><br>
                 <label for="cf"></label><br>
-                <input type="text" id="cf" name="cf" th:value="${utente.codiceFiscale}"><br>
+                <input type="text" th:field="*{codiceFiscale}" id="cf" name="cf" th:value="${utente.codiceFiscale}"><br>
                 <label for="indirizzo"></label><br>
-                <input type="text" id="indirizzo" name="indirizzo" th:value="${utente.indirizzo}"><br>
+                <input type="text" th:field="*{indirizzo}" id="indirizzo" name="indirizzo" th:value="${utente.indirizzo}"><br>
                 <label for="email"></label><br>
-                <input type="email" id="email" name="email" th:value="${utente.email}"><br>
+                <input type="email" th:field="*{email}" id="email" name="email" th:value="${utente.email}"><br>
                 <label for="telefono"></label><br>
-                <input type="tel" id="telefono" name="telefono" th:value="${utente.telefono}"><br>
-                <label for="password"></label><br>
-                <input type="password" id="password" name="password" th:value="${utente.password}"><br>
+                <input type="tel" th:field="*{telefono}" id="telefono" name="telefono" th:value="${utente.telefono}"><br>
+              <!--  <label for="password"></label><br>
+                <input type="password" id="password" name="password" th:value="${utente.password}"><br> -->
                 <br><br><br>
                 <button type="submit">Modifica</button>
             </form >
         </div>
     
+    <br><br>
+    <button onclick="window.location.href='http://localhost:8080/homepage';">Indietro</button>
         
 </body>
 </html>

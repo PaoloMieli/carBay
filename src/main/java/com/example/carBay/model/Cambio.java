@@ -5,22 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//public enum Cambio {
-//	
-//	MANUALE("cambio manuale"),
-//	SEQUENZIALE("cambio sequenziale"),
-//	AUTOMATICO("cambio automatico");
-//	
-//	private String tipoCambio;
-//    
-//	Cambio(final String tipoCambio) {
-//        this.tipoCambio = tipoCambio;
-//    }
-//    
-//    public String getTipoCambio() {
-//        return tipoCambio;
-//    }
-//}
 
 @Entity
 public class Cambio {

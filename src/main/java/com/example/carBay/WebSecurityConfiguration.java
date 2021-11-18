@@ -45,12 +45,9 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
             .antMatchers("/registrazione").permitAll()
-//            .antMatchers("/new").hasAnyAuthority("ADMIN", "CREATOR")
-//            .antMatchers("/edit/**").hasAnyAuthority("ADMIN", "EDITOR")
-//            .antMatchers("/delete/**").hasAuthority("ADMIN")
             .anyRequest().permitAll()
             .and()
-            .formLogin().defaultSuccessUrl("/homepage").permitAll()  //.loginPage("/login")
+            .formLogin().defaultSuccessUrl("/homepage").permitAll()
             .and()
             .logout().logoutSuccessUrl("/").permitAll()
             .and()

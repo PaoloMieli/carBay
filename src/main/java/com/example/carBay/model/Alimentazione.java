@@ -26,27 +26,4 @@ public class Alimentazione {
 	public Long getId() {
 		return id;
 	}
-
-//	public void setId(Long id) {
-//		this.id = id;
-//	}
-	
-	
-	
-//	BENZINA("alimentazione a benzina"),
-//	GASOLIO("alimentazione a gasolio"),
-//	IBRIDOELETTRICO("alimentazione ibrida"),
-//	GPL("alimentazione a gas"),
-//	ELETTRICO("alimentazione elettrica");
-	
-	
-//	private String tipoAlimentazione;
-//    
-//	Alimentazione(final String tipoAlimentazione) {
-//        this.tipoAlimentazione = tipoAlimentazione;
-//    }
-//    
-//    public String getTipoAlimentazione() {
-//        return tipoAlimentazione;
-//    }
 }
