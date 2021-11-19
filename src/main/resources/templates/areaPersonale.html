@@ -6,38 +6,51 @@
     <title>Area Personale</title>
 </head>
 <body>
-    
-    
-    
-    <h1>Area Personale</h1>
-        <div>
-            <form th:action="@{/areaPersonale}" th:object="${utente}" method="post">
-                <input type="hidden" th:field="*{id}" id="id" name="id" th:value="${utente.id}"><br>
-                <label for="nome"></label><br>
-                <input type="text" th:field="*{nome}" id="nome" name="nome" th:value="${utente.nome}"><br>
-                <label for="cognome"></label><br>
-                <input type="text" th:field="*{cognome}" id="cognome" name="cognome" th:value="${utente.cognome}"><br>
-                <label for="username"></label><br>
-                <input type="text" th:field="*{username}" id="username" name="username" th:value="${utente.username}"><br>
-                <label for="data"></label><br>
-                <input type="date" th:field="*{dataNascita}" id="data" name="data" th:value="${utente.dataNascita}"><br>
-                <label for="cf"></label><br>
-                <input type="text" th:field="*{codiceFiscale}" id="cf" name="cf" th:value="${utente.codiceFiscale}"><br>
-                <label for="indirizzo"></label><br>
-                <input type="text" th:field="*{indirizzo}" id="indirizzo" name="indirizzo" th:value="${utente.indirizzo}"><br>
-                <label for="email"></label><br>
-                <input type="email" th:field="*{email}" id="email" name="email" th:value="${utente.email}"><br>
-                <label for="telefono"></label><br>
-                <input type="tel" th:field="*{telefono}" id="telefono" name="telefono" th:value="${utente.telefono}"><br>
-              <!--  <label for="password"></label><br>
-                <input type="password" id="password" name="password" th:value="${utente.password}"><br> -->
-                <br><br><br>
-                <button type="submit">Modifica</button>
-            </form >
-        </div>
-    
-    <br><br>
-    <button onclick="window.location.href='http://localhost:8080/homepage';">Indietro</button>
-        
+
+	<div>
+	 <h1>Area Personale</h1>
+	 
+	 
+	 
+	 <table>
+	 <thead>
+	 	<tr>
+	 	<th>Nome</th>
+	 	<th>Cognome</th>
+	 	<th>Username</th>
+	 	<th>Data di nascita</th>
+	 	<th>Codice Fiscale</th>
+	 	<th>Indirizzo</th>
+	 	<th>Email</th>
+	 	<th>Telefono</th>
+	 	<th> Operazioni </th>
+	 	</tr>
+	 	
+	 </thead>
+	 <tbody>
+	 	<tr> 
+	 	<td th:text="${utente.nome}"/>
+	 	<td th:text="${utente.cognome}"/>
+	 	<td th:text="${utente.username}"/>
+	 	<td th:text="${utente.dataNascita}"/>
+	 	<td th:text="${utente.codiceFiscale}"/>
+	 	<td th:text="${utente.indirizzo}"/>
+	 	<td th:text="${utente.email}"/>
+	 	<td th:text="${utente.telefono}"/>
+	 	<td>
+	 		<a th:href="@{/areaPersonaleModifica(utenteId=${utente.id})}">Modifica </a>
+	 	</td>
+	 	</tr>
+	 </tbody>
+	 </table>
+	</div>
 </body>
 </html>
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
