@@ -1,4 +1,4 @@
-package com.example.carBay.controller;
+package com.example.carBay.utility;
 
 import java.util.Base64;
 

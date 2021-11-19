@@ -1,4 +1,4 @@
-package com.example.carBay;
+package com.example.carBay.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
