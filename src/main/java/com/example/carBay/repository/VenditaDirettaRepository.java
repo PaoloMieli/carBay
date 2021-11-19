@@ -1,106 +1,34 @@
 package com.example.carBay.repository;
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+
 import com.example.carBay.model.VenditaDiretta;
 
-public interface VenditaDirettaRepository extends CrudRepository<VenditaDiretta, Long> {
+public interface VenditaDirettaRepository extends JpaRepository<VenditaDiretta, Long> {
 
 		
-//	@Query( "SELECT * FROM "
-//			+ "vendita, asta "
-//			+ "WHERE "
-//			+ "vendita.alimentazione = input"
-//			+ "OR"
-//			+ " vendita.cambio = input"
-//			+ "OR"
-//			+ " vendita.carrozzeria =  input"
-//			+ "OR"
-//			+ " vendita.cilindrata =  input"
-//			+ "OR"
-//			+ " vendita.colore = input"
-//			+ "OR"
-//			+ " vendita.data_immatricolazione =  input"
-//			+ "OR"
-//			+ " vendita.km = input"
-//			+ "OR"
-//			+ " vendita.marca =  input"
-//			+ "OR"
-//			+ " vendita.marce =  input"
-//			+ "OR"
-//			+ " vendita.modello =  input"
-//			+ "OR"
-//			+ " vendita.porte =  input"
-//			+ "OR"
-//			+ " vendita.posti =  input"
-//			+ "OR"
-//			+ " vendita.prezzo =  input"
-//			+ "OR"
-//			+ " vendita.trazione = input"
-//			+ "OR"
-//			+ " asta.alimentazione =  input"
-//			+ "OR"
-//			+ " asta.cambio =  input"
-//			+ "OR"
-//			+ " asta.carrozzeria =  input"
-//			+ "OR"
-//			+ " asta.cilindrata =  input"
-//			+ "OR"
-//			+ " asta.colore =  input"
-//			+ "OR"
-//			+ " asta.data_immatricolazione =  input"
-//			+ "OR"
-//			+ " asta.km =  input"
-//			+ "OR"
-//			+ " asta.marca = input"
-//			+ "OR"
-//			+ " asta.marce = input"
-//			+ "OR"
-//			+ " asta.modello =  input"
-//			+ "OR"
-//			+ " asta.porte =  input"
-//			+ "OR"
-//			+ " asta.posti =  input"
-//			+ "OR"
-//			+ " asta.prezzo =  input"
-//			+ "OR"
-//			+ " asta.trazione = input")
-//	public VenditaDiretta getRicercaPerParolaChiave(@Param("input") String ricerca);
-	
-	
-	
-//	@Query( "SELECT * FROM "
-//			+ "vendita, asta "
-//			+ "WHERE "
-//			+ "vendita.alimentazione = input"
-//			+ "OR"
-//			+ " vendita.cambio = input"
-//			+ "OR"
-//			+ " vendita.carrozzeria =  input"
-//			+ "OR"
-//			+ " vendita.colore = input"
-//			+ "OR"
-//			+ " vendita.marca =  input"
-//			+ "OR"
-//			+ " vendita.modello =  input"
-//			+ "OR"
-//			+ " vendita.prezzo =  input"
-//			+ "OR"
-//			+ " vendita.trazione = input"
-//			+ "OR"
-//			+ " asta.alimentazione =  input"
-//			+ "OR"
-//			+ " asta.cambio =  input"
-//			+ "OR"
-//			+ " asta.carrozzeria =  input"
-//			+ "OR"
-//			+ " asta.marca = input"
-//			+ "OR"
-//			+ " asta.modello =  input"
-//			+ "OR"
-//			+ " asta.prezzo =  input"
-//			+ "OR"
-//			+ " asta.trazione = input")
-	
+	@Query(value = "select * from "
+			+ "vendita v"
+			+ " where "
+			+ "v.alimentazione like %:keyword%"
+			+ " or "
+			+ "v.cambio like %:keyword%"
+			+ " or "
+			+ "v.carrozzeria like %:keyword%"
+			+ " or "
+			+ "v.colore like %:keyword%"
+			+ " or "
+			+ "v.marca like %:keyword%"
+			+ " or "
+			+ "v.modello like %:keyword%"
+			+ " or "
+			+ "v.prezzo like %:keyword%"
+			+ " or "
+			+ "v.trazione like %:keyword%", nativeQuery = true
+			)
+	List<VenditaDiretta> findByKeyword(@Param("keyword") String keyword);
 }

@@ -34,8 +34,7 @@ body, html {
     
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-        <button href="#about" class="w3-bar-item w3-button" onclick="window.location.href='http://localhost:8080/login1';">Accedi</button >
-        <button href="#about" class="w3-bar-item w3-button" onclick="window.location.href='http://localhost:8080/registrazione';">Registrati</button >
+        
     
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -55,11 +54,54 @@ body, html {
     <span class="w3-large">Vendi la tua auto o trova la tua prossima vettura.</span>
     <p >
     
-    <p>Full width:</p>
-	<form class="example" action="/action_page.php">
-	  <input type="text" placeholder="Search.." name="search">
-	  <button type="submit"><i class="fa fa-search"></i></button>
+    <p>Inserisci una parola chiave di ricerca</p>
+	<form th:action="@{/compra}" method="GET">
+	  <input type="text" placeholder="Cerca per marca, modello o altro" name="keyword" th:value="${keyword}" size="50">
+	  <button type="submit">Cerca</button>
+	  <button type="submit">Reset</button>
 	</form>
+	
+	<table>
+	<thead>
+	<tr>
+		<th>Marca</th>
+		<th>Modello</th>
+		<th>Alimentazione</th>
+		<th>Cambio</th>
+		<th>Marce</th>
+		<th>Trazione</th>
+		<th>Cilindrata</th>
+		<th>Carrozzeria</th>
+		<th>Porte</th>
+		<th>Posti</th>
+		<th>Data di immatricolazione</th>
+		<th>Colore</th>
+		<th>Km</th>
+		<th>Foto</th>
+		<th>Prezzo</th>
+	</tr>	
+	</thead>
+	<tbody>
+		<tr th:each="l : ${list}" >
+			<td th:text="${l.marca}"></td >
+			<td th:text="${l.modello}"></td >
+			<td th:text="${l.alimentazione}"></td >
+			<td th:text="${l.cambio}"></td >
+			<td th:text="${l.marce}"></td >
+			<td th:text="${l.trazione}"></td >
+			<td th:text="${l.cilindrata}"></td >
+			<td th:text="${l.carrozzeria}"></td >
+			
+			<td th:text="${l.porte}"></td >
+			<td th:text="${l.posti}"></td >
+			<td th:text="${l.dataImmatricolazione}"></td >
+			<td th:text="${l.colore}"></td >
+			<td th:text="${l.km}"></td >
+			<td> <img th:src="*{'data:image/png;base64,'+l.immagineC}" height=30 length=30 alt="" /></td >
+			<td th:text="${l.prezzo}"></td >
+		</tr>
+	</tbody>
+	</table>
 	
     </p>
 </div> 

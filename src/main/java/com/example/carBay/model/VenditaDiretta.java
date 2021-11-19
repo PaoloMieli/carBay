@@ -11,6 +11,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.example.carBay.controller.ConverterBase64Utility;
+
 
 @Entity
 @Table(name = "vendita")
@@ -58,7 +60,10 @@ public class VenditaDiretta {
 	
 
 	@Lob
+	@Column(columnDefinition = "LONGBLOB NOT NULL")
 	private byte[] immagine;
+	
+	private String immagineC;
 		
 
 	@ManyToOne
@@ -187,4 +192,7 @@ public class VenditaDiretta {
 		this.carrozzeria = carrozzeria;
 	}
 	//------------------------
+	public String getImmagineC() {
+		return ConverterBase64Utility.convert(this.getImmagine());
+	}
 }
