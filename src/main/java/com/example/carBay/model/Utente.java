@@ -20,6 +20,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 
+/*  Alternativa con lombok
+@Data
+@NoArgsConstructor
+public class Utente {
+	private final Long id;
+	private String nome;
+	private String cognome;
+	ecc...
+}
+*/
+
 @Entity
 @Table(name = "utenti")
 public class Utente {
@@ -142,9 +153,7 @@ public class Utente {
 	public Set<Ruolo> getRuoli() {
 			return ruoli;
 		}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	public void setId(Long id) {this.id = id;}
 	
 	
 }

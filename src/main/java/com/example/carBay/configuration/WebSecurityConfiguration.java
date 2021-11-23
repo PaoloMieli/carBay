@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.example.carBay.services.UtenteDettagliServiceImpl;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -44,16 +45,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/registrazione").permitAll()
-            .anyRequest().permitAll()
+            .antMatchers("/registrazione", "/", "/index", "/compra").permitAll()
+            .anyRequest().authenticated()
             .and()
             .formLogin().loginPage("/login1").defaultSuccessUrl("/homepage").permitAll()
             .and()
-            .logout().logoutSuccessUrl("/").permitAll()
+            .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").permitAll()
             .and()
             .exceptionHandling().accessDeniedPage("/403")
             ;
     }
-	
-	
+	//hasRole("USER")
 }

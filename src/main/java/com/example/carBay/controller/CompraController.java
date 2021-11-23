@@ -31,6 +31,22 @@ public class CompraController {
 		
 	    return "compra";
 	}
-	
-	
+
+	/*
+	@GetMapping("/compra2")
+	public List<VenditaDiretta> ricerca2(VenditaDiretta venditaDiretta, String keyword) {
+
+		List<VenditaDiretta> list;
+
+		if(keyword != null) {
+			 list = venditaDirettaService.getByKeyword(keyword);
+
+		}else {
+			 list = venditaDirettaService.getAllVendite();
+
+		}
+
+		return list;
+	}
+	*/
 }
