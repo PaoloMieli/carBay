@@ -55,5 +55,5 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
             .exceptionHandling().accessDeniedPage("/403")
             ;
     }
-	//hasRole("USER")
+
 }

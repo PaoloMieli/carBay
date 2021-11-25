@@ -26,5 +26,11 @@ public class UtenteServiceImpl implements UtenteService{
          
         return utente;
 	}
+
+    @Override
+    public void save(Utente utente){
+
+        utenteRepository.save(utente);
+    }
 	
 }

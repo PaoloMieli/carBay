@@ -5,4 +5,6 @@ import com.example.carBay.model.Utente;
 public interface UtenteService {
 
 	public Utente loadUtenteByUsername(String username);
+
+	public void save(Utente utente);
 }
